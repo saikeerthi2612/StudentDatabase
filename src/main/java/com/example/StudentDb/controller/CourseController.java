@@ -37,13 +37,13 @@ public class CourseController {
 	}
 	
 	@PutMapping("/updateCourse")
-	public Course updateCourseDetails(@RequestBody Course course) {
-		return courseservice.updateCourseDetails(course);
+	public Course updateCourseDetails(@RequestBody Course course,Long cId) {
+		return courseservice.updateCourseDetails(course,cId);
 	}
 	
 	@DeleteMapping("/deleteCourse/{id}")
-	public void deleteCourse(@PathVariable Long id) {
-		 courseservice.deleteCourse(id);
+	public String deleteCourse(@PathVariable Long id) {
+		 return courseservice.deleteCourse(id);
 	}
 	
 

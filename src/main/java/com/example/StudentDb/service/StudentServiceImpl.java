@@ -39,7 +39,7 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	
-	public Student updateDetails(Student student) {
+	public Student updateDetails(Student student,Long id) {
 		// TODO Auto-generated method stub
 		Student updateStudent=repo.findById(student.getId()).orElse(null);
 		if(updateStudent!=null) {
@@ -53,10 +53,10 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public void deleteStudent(Long id) {
+	public String deleteStudent(Long id) {
 		// TODO Auto-generated method stub
 		repo.deleteById(id);
-		
+		return "deleted id is " +id;		
 		
 	}
 

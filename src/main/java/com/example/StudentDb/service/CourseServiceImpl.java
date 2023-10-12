@@ -35,7 +35,7 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public Course updateCourseDetails(Course course) {
+	public Course updateCourseDetails(Course course,Long cId) {
 		// TODO Auto-generated method stub
 		Course updateCourse=courserepo.findById(course.getcId()).orElse(null);
 		if(updateCourse!=null) {
@@ -50,9 +50,10 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-	public void deleteCourse(Long cId) {
+	public String deleteCourse(Long cId) {
 		// TODO Auto-generated method stub
 		courserepo.deleteById(cId);
+		return "deleted courseid is "+cId;
 
 	}
 

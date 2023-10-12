@@ -36,14 +36,14 @@ public class StudentController {
 		return service.getAllStds();
 	}
 	
-	@PutMapping("/updateStudent")
-	public Student updateStudentDetails(@RequestBody Student student) {
-		return service.updateDetails(student);
+	@PutMapping("/updateStudent/{id}")
+	public Student updateStudentDetails(@RequestBody Student student,@PathVariable Long id) {
+		return service.updateDetails(student,id);
 	}
 	
 	@DeleteMapping("/deleteStudent/{id}")
-	public void deleteStudent(@PathVariable Long id) {
-		 service.deleteStudent(id);
+	public String deleteStudent(@PathVariable Long id) {
+		 return service.deleteStudent(id);
 	}
 	
 	

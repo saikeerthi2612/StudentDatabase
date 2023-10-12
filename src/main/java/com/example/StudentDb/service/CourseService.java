@@ -8,7 +8,7 @@ public interface CourseService {
 	public Course saveCourse(Course course);
 	public Course getById(Long cId);
 	public List<Course> getAllCourses();
-	public Course updateCourseDetails(Course course);
-	public void deleteCourse(Long cId);
+	public Course updateCourseDetails(Course course,Long cId);
+	public String deleteCourse(Long cId);
 
 }
